@@ -117,7 +117,7 @@ class Figura extends Image{
 
     }
 
-
+    test(){}
 
 
 
