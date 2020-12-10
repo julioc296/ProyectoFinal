@@ -1,0 +1,10 @@
+@font-face{
+    font-family:Pokemon GB;
+    src: url('Pokemon_GB.ttf') format('truetype');
+}
+
+body{
+    font-size: 60px;
+    font-family:Pokemon GB;
+    
+}
