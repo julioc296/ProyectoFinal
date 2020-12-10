@@ -2,7 +2,7 @@ class Nivel {
     level; //Nivel en que se encuentra el juego (5 niveles, se usa intervalo 0-4 para facilitar indexado)
     fondoCanvas = ["img/nivel1.jpg", "img/nivel2.jpg", "img/nivel3.jpg", "img/nivel4.jpg", "img/nivel5.jpg"]; //fondos de pantalla de cada nivel
     frecuenciaVillano = [6000, 5000, 4000, 3000, 2000];
-    frecuenciaMoneda = [1000, 0, 0, 0, 0];
+    frecuenciaMoneda = [3000, 3000, 5000, 5000, 6000];
     duracionMoneda = [20000, 15000, 10000, 7000, 5000];
     velocidadShuriken = [2, 3, 5, 6, 7]
     ultimoVillano = 0; //tiempo creacion ultimo villano
@@ -51,9 +51,10 @@ class Nivel {
     }
     crearMoneda() {
         if (Date.now() - this.ultimaMoneda >= this.frecuenciaMoneda[this.level]) {
-            let random2 = Math.floor(Math.random() * (901 - 100)) + 100;
+            let random = Math.floor(Math.random() * (901 - 100)) + 100;
+            let random2 = Math.floor(Math.random() * (451 - 100)) + 100;
             this.ultimaMoneda = Date.now();
-            return new Figura("moneda", random2, 400, 25, 25, 0, "img/moneda.png", false, "as");
+            return new Figura("moneda", random, random2, 25, 25, 0, "img/moneda.png", false, "as");
         }
     }
     aumentarNivel(){
